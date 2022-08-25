@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Node
+{
+    int data;
+    struct Node *llink;
+    struct Node *rlink;
+}
+
+struct Node *newNode(struct Node *)
+
+

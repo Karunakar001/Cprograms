@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+
+struct Node
+{
+    int data;
+    struct Node *lbranch;
+    struct Node *rbranch;
+};
+
+
+struct Node *createNode(int data)
+{
+    struct Node *newNode=(struct Node *)malloc(sizeof(struct Node));
+    newNode->lbranch=NULL;
+    newNode->rbranch=NULL;
+    newNode->data=data;
+    return newNode;
+}
+
+
+
+struct Node *insert(struct Node *root,int data)
+{
+    if(root==NULL)
+    {
+        return createNode(data);
+    }
+    else if(data<root->data)
+        root->lbranch=insert(root->lbranch,data);
+    else if(data>root->data)
+        root->rbranch=insert(root->rbranch,data);
+    return root;
+}
+
+
+
+
+
+void main()
+{
+    struct Node *root=NULL;
+    root=insert(root,10);
+    root=insert(root,5);
+    root=insert(root,30);
+    root=insert(root,2);
+    inOrder(root);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
